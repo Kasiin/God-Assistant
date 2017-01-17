@@ -1,22 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta name="description" content="狼人杀上帝助手">
-<meta name="author" content="Kasiin">
-<meta charset="UTF-8">
-<style type="text/css">
-    body {text-align: center;}
-    h1 {color:red;}
-    p {color:blue;}
-</style>
-<title>god assistant</title>
+    <meta name="author" content="Kasiin">
+    <meta charset="UTF-8">
+    <style type="text/css">
+        body {text-align: center;}
+        h1 {color:red;}
+        p {color:blue;}
+    </style>
+    <script>
+        function table()
+        {
+            var  myselect=document.getElementById("select_1"); //获取选择对象
+            var index=myselect.selectedIndex ;             // selectedIndex代表的是你所选中项的index
+            var Num =  myselect.options[index].value;// 获取值
+            var data = "";
+            data += " <table style='margin-left:auto; margin-right:auto;'>";
+            data += " <tr>" +
+                "<td>玩家号码</td>" +
+                "<td>玩家身份</td>" +
+                "<td>玩家状态</td>" +
+                "</tr>" ;
+            for (var i = 1; i <= Num; i++) {
+                data += "<tr>";
+                data += "<td>" + i + "</td>";
+                data += "<td>" +
+                    "<select> <option>守卫</option> <option>猎人</option> <option>女巫</option> <option>预言家</option> <option selected>村民</option> </select>" + "</td>";
+                data += "<td>"+"<input type='checkbox'> 刀&nbsp;&nbsp; <input type='checkbox'>票&nbsp;&nbsp; <input type='checkbox'>守&nbsp;&nbsp; <input type='checkbox'>毒&nbsp;&nbsp; <input type='checkbox'>救&nbsp;&nbsp; <input type='checkbox'>枪" + "</td>";
+                data += "</tr>";
+            }
+            data += "</table>";
+            document.getElementById("div1").style.display = "block";
+            document.getElementById("table1").innerHTML = data;
+        }
+    </script>
+    <title>god assistant</title>
 </head>
-<body>
+<br>
 <h1>狼人杀</h1>
 <h2>上帝助手</h2>
 <form action="">
-选择玩家人数：
-    <select name="playernum" id="selece_k1" class="xlak">
+    选择玩家人数：
+    <select name="playernum" id="select_1" class="xlak">
         <option value="8">8</option>
         <option value="9">9</option>
         <option value="10">10</option>
@@ -27,7 +53,10 @@
         <option value="15">15</option>
         <option value="16">16</option>
     </select>
-    <br><input type="button" value="开始游戏">
-</form>
+    <br><input name="" type="button" value="开始游戏" class="buttton" onclick="table()"/>
+</form><br>
+<div id="div1" style="display: none" mce_style="display: none" >
+    <div id="table1" ></div>
+</div>
 </body>
 </html>

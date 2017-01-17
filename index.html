@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-    <meta name="description" content="狼人杀上帝助手">
+    <meta name="description" content="狼人杀上帝助手0.1">
     <meta name="author" content="Kasiin">
     <meta charset="UTF-8">
     <style type="text/css">
+        html {
+            height:100%;
+        }
         body {text-align: center;}
         h1 {color:red;}
         p {color:blue;}
+        #footer{ width: 100%;  height: 50px;  position: fixed;  bottom: 0;    text-align:center; }
     </style>
     <script>
         function table()
@@ -35,28 +39,30 @@
             document.getElementById("table1").innerHTML = data;
         }
     </script>
-    <title>god assistant</title>
+    <title>上帝助手</title>
 </head>
-<br>
+<body>
 <h1>狼人杀</h1>
 <h2>上帝助手</h2>
-<form action="">
-    选择玩家人数：
-    <select name="playernum" id="select_1" class="xlak">
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12" selected>12</option>
-        <option value="13">13</option>
-        <option value="14">14</option>
-        <option value="15">15</option>
-        <option value="16">16</option>
-    </select>
-    <br><input name="" type="button" value="开始游戏" class="buttton" onclick="table()"/>
-</form><br>
+选择玩家人数：
+<select name="playernum" id="select_1" class="xlak">
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12" selected>12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+</select>
+<br><input name="" type="button" value="开始游戏" class="buttton" onclick="table()"/>
+<br>
 <div id="div1" style="display: none" mce_style="display: none" >
     <div id="table1" ></div>
+</div>
+<div id="footer" >
+    Copyright Kasiin<br>当前版本 0.1
 </div>
 </body>
 </html>
